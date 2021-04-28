@@ -16,8 +16,9 @@ body{
     display: flex;
     flex-flow: column;
 }
-
-/* header */
+/*------------------
+/*--------Header---------
+------------------*/
 
 header {
     /* Centro la imagen y la adapto centrandola */
@@ -69,6 +70,26 @@ header a:hover{
 p{
     margin: 20px auto;
 }
+
+/*------------------
+/*--------Main---------
+------------------*/
+
+/* Main */
+
+#introduction{
+    display: flex;
+    flex-flow: row;
+}
+section#introduction h1{
+    font-size: 2rem;
+}
+#introduction > div{
+    padding: 2rem 3rem;
+}
+/* #btns{
+    flex-direction: column;
+} */
 .btn{
     background-color: dodgerblue;
     padding: 10px 20px;
@@ -85,26 +106,12 @@ p{
 .btn.btn-orange{
     background-color: orange;
 }
-
-
-/* Main */
-
-#introduction{
-    display: flex;
-    flex-flow: row;
-}
-section#introduction h1{
-    font-size: 2rem;
-}
-#introduction > div{
-    padding: 2rem 3rem;
-}
 .introduction-info{
-    background-color: #222;
+    background-color: rgb(26, 23, 31);
     /* flex: 1; */
 }
 .introduction-icon{
-    background-color: white;
+    background-color: rgba(0, 196, 230, 0.705);
     color: black;
     flex: 0 0 400px;
 }
@@ -118,7 +125,7 @@ section#introduction h1{
     font-size: 3rem;
     margin-right: 15px;
     width: 54px;
-    color: #888;
+    color: rgb(35, 39, 44);
 }
 .introduction-icon li > p{
     display: flex;
