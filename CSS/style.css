@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
+/*------------------
+/*--------Estas son las variables de css donde establezco en el root y puedo usar en todos los demas---------
+------------------*/
+:root{
+    --color-primario: rgb(30, 144, 255);
+}
 *{ /*margin y padding universal*/
     margin: 0;
     padding: 0;
@@ -46,7 +52,7 @@ header nav a{
     transition: background 0.3s ease-in-out;
 }
 header a:hover{
-    background-color: dodgerblue;
+    background-color: var(--color-primario);
 }
 .header-title{
     display: flex;
@@ -91,7 +97,7 @@ section#introduction h1{
     flex-direction: column;
 } */
 .btn{
-    background-color: dodgerblue;
+    background-color: var(--color-primario);
     padding: 10px 20px;
     color: white;
     border-radius: 5px;
@@ -111,9 +117,12 @@ section#introduction h1{
     /* flex: 1; */
 }
 .introduction-icon{
-    background-color: rgba(0, 196, 230, 0.705);
+    background-color: rgba(244, 245, 245, 0.966);
     color: black;
     flex: 0 0 400px;
+}
+.introduction-icon ul{
+
 }
 .introduction-icon li{
     flex: 1;
@@ -125,9 +134,32 @@ section#introduction h1{
     font-size: 3rem;
     margin-right: 15px;
     width: 54px;
-    color: rgb(35, 39, 44);
+    color: dodgerblue;
+    border: black;
 }
 .introduction-icon li > p{
     display: flex;
     justify-content: flex-start;
+}
+
+.our-work {
+    padding: 2rem 3rem;
+    background-color: var(--color-primario);
+}
+section.our-work {
+    background-color: black;
+}
+section h1.title{
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+section p.description{
+    font-weight: 300;
+    text-align: center;
+    color: #555;
+}
+footer {
+    min-height: 220px;
+    background: linear-gradient(to right, rgb(0,0,0) 50%, rgb(0,48,`79)100%);
 }
