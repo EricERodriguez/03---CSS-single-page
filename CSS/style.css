@@ -147,19 +147,96 @@ section#introduction h1{
     background-color: var(--color-primario);
 }
 section.our-work {
-    background-color: black;
+    background-color: rgb(191, 228, 235);
 }
 section h1.title{
+    color: rgba(0, 195, 255, 0.555);
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
+    border: 10px red;
 }
 section p.description{
     font-weight: 300;
     text-align: center;
     color: #555;
 }
+
+/*------------------
+/*--------clases de tecto---------
+------------------*/
+
+.text-center {
+    text-align: center important;
+}
+/*------------------
+/*--------el card container lo uso para que 
+todo entre en el contenedor y no se sobrepongan, como me paso con los botones   tambien puedo ver grid---------
+------------------*/
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*------------------
+/*--------En .card hago que las tarjetas se ponga una debajo de la otra mas los colores y demas---------
+------------------*/
+.card {
+    background-color: rgb(241, 241, 241);
+    color:  black;
+    padding: 1rem 1.5rem 0.5rem;
+    box-shadow: 3px 3px 10px rgb(87, 82, 82);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 250px;
+    margin: 10px;
+}
+.card .card-icon{
+    font-size: 4rem;
+    color: var(--color-primario);
+}
+.card .card-title{
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 5px auto;
+}
+.card .card-content{
+    font-size: 0.8rem;
+    color: gray;
+}
+.card .card-footer{
+    margin: 25px;
+    font-size: 0.7rem;
+    padding: 10px;
+    border-top: 1px solid #666;
+    width: 100%;
+    text-align: center;
+
+}
+/*------------------
+/*--------aca hago gradiente en rojo---------
+------------------*/
+#work-with-us{
+    padding: 2rem 3rem;
+    background: 
+    linear-gradient( to bottom,
+                        rgba(0,0,0, 0.3) 0%,
+                        rgba(207, 39, 39, 0.3) 100%),url('/assets/images/work.jpg') center center/cover;
+    background-repeat: no-repeat;
+
+}
+#work-with-us .description{
+    color: white;
+}
+#work-with-us h1{
+
+}
+button{
+    border: none;
+    cursor: pointer;
+}
 footer {
     min-height: 220px;
-    background: linear-gradient(to right, rgb(0,0,0) 50%, rgb(0,48,`79)100%);
+    background: linear-gradient(to right, rgb(0,0,0) 50%, rgb(0,48,79)100%);
 }
