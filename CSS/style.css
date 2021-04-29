@@ -167,7 +167,7 @@ section p.description{
 ------------------*/
 
 .text-center {
-    text-align: center important;
+    text-align: center !important;
 }
 /*------------------
 /*--------el card container lo uso para que 
@@ -239,4 +239,20 @@ button{
 footer {
     min-height: 220px;
     background: linear-gradient(to right, rgb(0,0,0) 50%, rgb(0,48,79)100%);
+}
+
+/*------------------
+/*--------MEDIA QUERYS---------
+------el print es para imprimir lo que quieras de la pagina y el screen es para diseno responsive------------*/
+
+@media print{
+    header,main{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .header-title {
+        color: red;
+    }
 }
