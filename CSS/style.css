@@ -44,11 +44,16 @@ header nav {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+/* este solo lo voy a ver cuando sea pequena la pantalla ir al media */
+.collapse-menu{
+    display: none;
+}
 header nav a{
     color: inherit;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 15px;
     transition: background 0.3s ease-in-out;
 }
 header a:hover{
@@ -119,7 +124,7 @@ section#introduction h1{
 .introduction-icon{
     background-color: rgba(244, 245, 245, 0.966);
     color: black;
-    flex: 0 0 400px;
+    flex: 0 0 200px;
 }
 .introduction-icon ul{
 
@@ -251,8 +256,23 @@ footer {
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 700px) {
+    html{
+        font-size: 12px;
+    }
     .header-title {
-        color: red;
+        color: rgb(0, 183, 255) !important;
+    }
+    #introduction{
+        flex-flow: column;
+    }
+    header nav{
+        justify-content: space-between;
+    }
+    .collapse-menu{
+        display: flex;
+    }
+    header nav a.link{
+        display: none;
     }
 }
