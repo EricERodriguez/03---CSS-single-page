@@ -5,6 +5,7 @@
 ------------------*/
 :root{
     --color-primario: rgb(30, 144, 255);
+    --color-bg: rgb(221, 221, 221);
 }
 *{ /*margin y padding universal*/
     margin: 0;
@@ -44,6 +45,9 @@ header nav {
     padding-left: 20px;
     padding-right: 20px;
 }
+nav .link-container {
+    display: flex;
+}
 
 /* este solo lo voy a ver cuando sea pequena la pantalla ir al media */
 .collapse-menu{
@@ -58,6 +62,55 @@ header nav a{
 }
 header a:hover{
     background-color: var(--color-primario);
+}
+/*------------------
+/*--------BOTON BURGUER---------
+------------------*/
+.nav-wrap {
+    position: relative;
+}
+.burguer {
+    background-color: orange;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 1rem;
+}
+.burguer > div{
+    background-color: white;
+    width: calc(100% - 2rem);
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+.burguer >div::before,
+.burguer >div::after{
+    content: '';
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    transform: translateY(-10px);
+}
+.burguer >div::after{
+    content: '';
+    transform: translateY(10px);
+}
+
+.menu-toggler {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: .0;
+    cursor: pointer;
 }
 .header-title{
     display: flex;
@@ -121,6 +174,15 @@ section#introduction h1{
     background-color: rgb(26, 23, 31);
     /* flex: 1; */
 }
+.introduction-info *::selection{
+
+}
+/* .introduction-info h1::before{
+    content: '$';
+}
+.introduction-info h1::after{
+    content: '.00';
+} */
 .introduction-icon{
     background-color: rgba(244, 245, 245, 0.966);
     color: black;
@@ -147,7 +209,8 @@ section#introduction h1{
     justify-content: flex-start;
 }
 
-.our-work {
+.our-work,
+.our-team {
     padding: 2rem 3rem;
     background-color: var(--color-primario);
 }
@@ -237,6 +300,48 @@ todo entre en el contenedor y no se sobrepongan, como me paso con los botones   
 #work-with-us h1{
 
 }
+/*------------------
+/*--------SECTION OUR TEAM---------
+------------------*/
+
+table.heroes{
+    border-collapse: collapse;
+    color: rgb(253, 253, 253);
+}
+.heroes thead tr > th {
+    padding: 1.5rem;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 1.3rem;
+}
+.heroes tr {
+    border-bottom: 1px solid rgb(109, 209, 248);
+    height: 70px;
+}
+.heroes tr:not(:first-child){
+    height: 70px;
+}
+
+/* elementos impares: odd
+elementos pares: even */
+
+.heroes tr:nth-child(odd){
+    background-color: rgba(74, 155, 226, 0.322);
+}
+.heroes tr:nth-child(even){
+    background-color: rgba(172, 198, 221, 0.788);
+}
+.heroes tbody tr td:first-child{
+    background-color: rgb(115, 230, 220);
+}
+.heroes tbody tr td:nth-child(3){
+    background-color: rgb(62, 199, 97);
+}
+
+
+
+
+
 button{
     border: none;
     cursor: pointer;
@@ -255,7 +360,12 @@ footer {
         display: none;
     }
 }
-
+@media screen and (max-width: 900px) {
+    .nav-wrap a:not(.link-important) {
+        /* background-color: orange; */
+        display: none;
+    }
+}
 @media screen and (max-width: 700px) {
     html{
         font-size: 12px;
@@ -273,6 +383,39 @@ footer {
         display: flex;
     }
     header nav a.link{
-        display: none;
+        /* display: none; */
+    }
+    .nav-wrap   a:first-child{
+        display: flex;
+    }
+    
+    .link-container {
+        position: absolute;
+        background-color: rgba(255, 99, 71, 0.384);
+        height: 100vh;
+        width: 100%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0);
+        transition: 0.3s ease;
+    }
+    .menu-toggler:checked + .burguer > div{
+        transform: rotate(-135deg);
+    }
+    .menu-toggler:checked + .burguer > div::before,
+    .menu-toggler:checked + .burguer > div::after
+    {
+        transform: rotate(90deg);
+    }
+    .link-container a{
+        line-height: 5rem;
+        font-size: 2.5rem;
+    }
+
+    .menu-toggler:checked ~ .link-container{
+       transform: scale(1);
     }
 }
